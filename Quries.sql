@@ -9,11 +9,18 @@ INNER JOIN codekata ON users.userid = codekata.userid;
 
 /*4. display the no of company drives attended by a user*/
 
-
+/*for specific user*/
 Use students;
 SELECT userid ,count(userid) AS Drives_Attended
 FROM company_drives
 GROUP BY userid HAVING userid=1;
+
+/*for all user*/
+use students;
+
+SELECT userid ,count(userid) AS Drives_Attended
+FROM company_drives
+GROUP BY userid;
 /*.........................................................................................................................................................*/
 
 /*5. combine and display students_activated_courses and courses for a specific user groping them based on the course*/
